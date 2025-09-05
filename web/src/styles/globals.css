@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-eternal-black text-eternal-white font-inter;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-eternal-black;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-eternal-purple-primary rounded-full;
+    box-shadow: 0 0 5px rgba(139, 92, 246, 0.4);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-eternal-purple-light;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.6);
+  }
+}
+
+@layer components {
+  .glow-text {
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.6),
+                 0 0 20px rgba(139, 92, 246, 0.4),
+                 0 0 30px rgba(139, 92, 246, 0.3);
+  }
+  
+  .glow-border {
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.2),
+                inset 0 0 10px rgba(139, 92, 246, 0.1);
+  }
+  
+  .glow-button {
+    @apply bg-eternal-purple-primary text-eternal-white border border-eternal-purple-primary;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  .glow-button:hover {
+    @apply bg-eternal-purple-light;
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
+    transform: translateY(-1px);
+  }
+  
+  .scanline-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.6), transparent);
+    animation: scanline 3s linear infinite;
+  }
+  
+  .typewriter-cursor::after {
+    content: '|';
+    color: #8B5CF6;
+    animation: blink 1s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+}
