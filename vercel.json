@@ -3,10 +3,7 @@
   "builds": [
     {
       "src": "web/package.json",
-      "use": "@vercel/next",
-      "config": {
-        "distDir": ".next"
-      }
+      "use": "@vercel/next"
     }
   ],
   "routes": [
@@ -15,9 +12,5 @@
       "dest": "/web/$1"
     }
   ],
-  "functions": {
-    "web/src/**/*.{js,ts,tsx}": {
-      "includeFiles": "web/**"
-    }
-  }
+  "rootDirectory": "web"
 }
