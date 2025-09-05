@@ -2,6 +2,11 @@
 const nextConfig = {
   images: {
     unoptimized: true
+  },
+  output: 'standalone',
+  trailingSlash: true,
+  experimental: {
+    outputFileTracingRoot: undefined
   }
 }
 
